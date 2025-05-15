@@ -1,0 +1,122 @@
+body {
+    background: linear-gradient(135deg, rgba(234, 238, 242, 0.8), rgba(255, 255, 255, 0.8)), url('your_background_image.jpg'); /* Glass effect with a background image */
+    background-size: cover;
+    color: #333; /* Dark text for contrast */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 0.8s ease; /* Fade-in animation for the body */
+    backdrop-filter: blur(10px); /* Glass effect */
+}
+
+.stopwatch-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for the container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease; /* Animation on hover */
+}
+
+.stopwatch-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+#time {
+    font-size: 4.5em; /* Larger font for time display */
+    margin: 20px 0;
+    color: #ff6b6b; /* Vibrant red for time */
+    animation: pulse 1.5s infinite; /* Pulse animation for time */
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.8); /* RGB glow effect */
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+button {
+    background: #4caf50; /* Green button color */
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    margin: 5px;
+    font-size: 1.2em;
+    color: white; /* White text on buttons */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s; /* Transition for background and scale */
+    animation: slideIn 0.5s ease; /* Animation for button loading */
+}
+
+button:hover {
+    background: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.saved-times {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 200px; /* Limit height for saved times */
+    overflow-y: auto; /* Scrollable if too many entries */
+}
+
+.time-entry {
+    background: rgba(240, 240, 240, 0.9); /* Light gray background with transparency for saved times */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between time and button */
+    align-items: center; /* Center vertically */
+    transition: transform 0.2s; /* Animation for saved time entries */
+}
+
+.time-entry:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.delete-btn {
+    background: #e74c3c; /* Red button color */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s; /* Transition for background */
+}
+
+.delete-btn:hover {
+    background: #c0392b; /* Darker red on hover */
+}
